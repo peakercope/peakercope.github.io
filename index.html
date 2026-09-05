@@ -1,1 +1,197 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#22272e"/><meta name="description" content="Web developer curriculum vitae app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>CV - Web Developer</title><script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8S0K8YWXE"></script><script defer="defer" src="/static/js/main.9a058ed3.js"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Under Construction</title>
+    <style>
+      :root {
+        --sky-top: #1b0836;
+        --sky-bottom: #4a0f5c;
+        --grid: #ff2ec4;
+        --sun-top: #ffde59;
+        --sun-bottom: #ff4d8d;
+        --pink: #ff2ec4;
+        --cyan: #4bf3ff;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background: linear-gradient(
+          180deg,
+          var(--sky-top) 0%,
+          var(--sky-bottom) 55%,
+          #14002b 100%
+        );
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Courier New", ui-monospace, monospace;
+        position: relative;
+      }
+
+      /* stars */
+      .stars {
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+          radial-gradient(1px 1px at 30% 10%, #fff, transparent),
+          radial-gradient(1px 1px at 50% 30%, #fff, transparent),
+          radial-gradient(1px 1px at 70% 15%, #fff, transparent),
+          radial-gradient(1px 1px at 85% 25%, #fff, transparent),
+          radial-gradient(1px 1px at 20% 40%, #fff, transparent),
+          radial-gradient(1px 1px at 60% 5%, #fff, transparent),
+          radial-gradient(1px 1px at 90% 35%, #fff, transparent);
+        background-size: 100% 45%;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+      }
+
+      /* sun */
+      .sun {
+        position: absolute;
+        bottom: 54%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: linear-gradient(
+          180deg,
+          var(--sun-top) 0%,
+          var(--sun-bottom) 100%
+        );
+        box-shadow: 0 0 80px 10px rgba(255, 77, 141, 0.6);
+        overflow: hidden;
+      }
+      .sun::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          to bottom,
+          transparent 0px,
+          transparent 8px,
+          var(--sky-bottom) 8px,
+          var(--sky-bottom) 14px
+        );
+        mask-image: linear-gradient(to bottom, transparent 0%, black 45%);
+      }
+
+      /* grid horizon */
+      .grid {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 42%;
+        background: linear-gradient(
+          180deg,
+          rgba(20, 0, 43, 0) 0%,
+          rgba(20, 0, 43, 0.4) 100%
+        );
+        perspective: 220px;
+        overflow: hidden;
+      }
+      .grid::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background-image:
+          repeating-linear-gradient(
+            to right,
+            var(--grid) 0 2px,
+            transparent 2px 60px
+          ),
+          repeating-linear-gradient(
+            to bottom,
+            var(--grid) 0 2px,
+            transparent 2px 40px
+          );
+        background-size: 60px 40px;
+        transform: rotateX(65deg);
+        transform-origin: top;
+        opacity: 0.85;
+        animation: scroll 3s linear infinite;
+      }
+      .mountains {
+        position: absolute;
+        bottom: 42%;
+        left: 0;
+        right: 0;
+        height: 12%;
+        background: #170a2e;
+        clip-path: polygon(
+          0% 100%,
+          0% 55%,
+          5% 70%,
+          10% 40%,
+          16% 65%,
+          22% 20%,
+          28% 60%,
+          34% 35%,
+          40% 75%,
+          46% 45%,
+          52% 65%,
+          58% 15%,
+          64% 55%,
+          70% 30%,
+          76% 70%,
+          82% 40%,
+          88% 60%,
+          94% 25%,
+          100% 55%,
+          100% 100%
+        );
+      }
+
+      @keyframes scroll {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 0 40px;
+        }
+      }
+
+      h1 {
+        position: relative;
+        z-index: 2;
+        bottom: 24px;
+        margin: 0;
+        font-size: clamp(1.6rem, 6vw, 3.2rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        text-align: center;
+        color: #fff;
+        text-shadow:
+          0 0 6px #fff,
+          0 0 14px var(--pink),
+          0 0 28px var(--pink),
+          0 0 48px var(--cyan);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .grid::before {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="sun"></div>
+    <div class="mountains"></div>
+    <div class="grid"></div>
+    <h1>Under Construction</h1>
+  </body>
+</html>
