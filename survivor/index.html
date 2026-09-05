@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGNAL BLEED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-B-CzKj5o.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-ExFH9ciH.css">
+</head>
+<body>
+
+  <canvas id="game"></canvas>
+  <div id="crt-overlay"></div>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div id="hp-wrap"><div id="hp-bar"></div><span id="hp-text"></span></div>
+    <div id="xp-label">SIGNAL</div>
+    <div id="xp-wrap"><div id="xp-bar"></div></div>
+    <div id="stats">
+      <span id="level-text">CH. 1</span>
+      <span id="timer-text">00:00:00</span>
+      <span id="kill-text">REC &#9679; 0</span>
+    </div>
+  </div>
+
+  <!-- Start screen -->
+  <div id="start-screen" class="overlay">
+    <p class="tape-label">CH.13 &mdash; DO NOT AIR &mdash; REC 3:14 AM</p>
+    <h1>SIGNAL BLEED</h1>
+    <p>You found a tape that shouldn't exist. Press play and the broadcast never signed off.</p>
+    <p>WASD to move &middot; Hold Left Click to fire toward the mouse. Survive until dawn &mdash; the dead air won't stay empty for long.</p>
+    <button id="start-btn">Press Play</button>
+    <button id="leaderboard-btn">High Scores</button>
+  </div>
+
+  <!-- Leaderboard (main menu) -->
+  <div id="leaderboard-screen" class="overlay hidden">
+    <h2>Archived Recordings</h2>
+    <ol id="leaderboard-list-menu" class="leaderboard-list"></ol>
+    <button id="leaderboard-back-btn">Back</button>
+  </div>
+
+  <!-- Pause menu -->
+  <div id="pause-screen" class="overlay hidden">
+    <h2>&#9611;&#9611; HOLD TRACKING &#9611;&#9611;</h2>
+    <button id="resume-btn">Resume</button>
+    <button id="mute-btn">Sound: On</button>
+    <button id="main-menu-btn">Main Menu</button>
+  </div>
+
+  <!-- Level up screen -->
+  <div id="levelup-screen" class="overlay hidden">
+    <h2>Programming Note</h2>
+    <div id="upgrade-choices"></div>
+  </div>
+
+  <!-- Game over screen -->
+  <div id="gameover-screen" class="overlay hidden">
+    <h1>END OF BROADCAST</h1>
+    <p class="tape-label">Please Stand By</p>
+    <p id="final-stats"></p>
+    <ol id="leaderboard-list" class="leaderboard-list"></ol>
+    <button id="restart-btn">Rewind &amp; Try Again</button>
+  </div>
+
+</body>
+</html>
